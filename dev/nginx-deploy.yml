@@ -4,6 +4,7 @@ metadata:
   name: webserver
   namespace: dev
 spec:
+  replicas:  3
   selector:
     matchLabels:
       app: nginx
@@ -12,7 +13,6 @@ spec:
       labels:
         app: nginx
     spec:
-      replicas:  3
       containers:
       - name: nginx
         image: nginx
