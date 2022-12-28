@@ -5,9 +5,16 @@ metadata:
   name: webserver
 spec:
   hosts:
-  - nginx-webserver..dev.svc.cluster.local
+  - "*"
+  gateways:
+  - my-gateway
   http:
-  - route:
+  - match:
+    - uri:
+        exact: /
+    - uri:
+    route:
     - destination:
-        host: nginx-webserver..dev.svc.cluster.local
-        subset: v1
+        host: nginx-webserver.dev.svc.cluster.local
+        port:
+          number: 80
