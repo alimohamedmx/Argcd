@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: Django-app
+  namespace: dev
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/alimohamedmx/Argcd.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernates.default.svc
+    namespace: dev
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
