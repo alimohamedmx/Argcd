@@ -6,10 +6,10 @@ spec:
   gateways:
     - argocd-gateway
   hosts:
-    - "www.alitest.com"
+    - "www.webserver.com"
   http:
     - route:
       - destination:
-          host: argocd-server.argocd.svc.cluster.local
+          host: webserver.dev.svc.cluster.local
           port:
             number: 80
