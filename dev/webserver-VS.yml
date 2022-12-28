@@ -4,7 +4,7 @@ metadata:
   name: webserver-service
 spec:
   gateways:
-    - argocd-gateway
+    - dev-gateway
   hosts:
     - "www.webserver.com"
   http:
