@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: argocd  
+spec:
+  gateways:
+    - argocd-gateway
+  hosts:
+    - "*"
+  http:
+    - match:
+      - uri:
+          prefix: "/argocd"
+    - route:
+      - destination:
+          host: argocd-server.argocd.svc.cluster.local  # interpreted as reviews.foo.svc.cluster.local
+          subset: v1
+    - match:
+      - uri:
+          prefix: "/webserver"
+    - route:
+      - destination:
+          host: nginx-server.argocd.svc.cluster.local  # interpreted as reviews.foo.svc.cluster.local
+          subset: v1
