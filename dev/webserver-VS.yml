@@ -6,7 +6,7 @@ spec:
   gateways:
     - dev-gateway
   hosts:
-    - "www.webserver.com"
+    - "www.dev.com"
   http:
     - route:
       - destination:

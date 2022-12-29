@@ -7,7 +7,7 @@ spec:
     istio: ingressgateway
   servers:
     - hosts:
-        - "www.alitest.com"
+        - "www.argocd.com"
       port:
         name: http
         number: 80
