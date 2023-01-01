@@ -4,7 +4,7 @@ metadata:
   name: webserver
   namespace: dev
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: httpd
         resources:
           limits:
             memory: "128Mi"
