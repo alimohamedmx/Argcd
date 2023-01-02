@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: webserver
   namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: delevoper-team
 spec:
   project: default
   source:

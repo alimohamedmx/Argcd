@@ -1,15 +1,15 @@
-# apiVersion: networking.istio.io/v1beta1
-# kind: VirtualService
-# metadata:
-#   name: webserver-service
-# spec:
-#   gateways:
-#     - dev-gateway
-#   hosts:
-#     - "www.dev.com"
-#   http:
-#     - route:
-#       - destination:
-#           host: webserver.dev.svc.cluster.local
-#           port:
-#             number: 80
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: webserver-service
+spec:
+  gateways:
+    - dev-gateway
+  hosts:
+    - "www.dev.com"
+  http:
+    - route:
+      - destination:
+          host: webserver.dev.svc.cluster.local
+          port:
+            number: 80
